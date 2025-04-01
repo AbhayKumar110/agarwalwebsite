@@ -1,0 +1,574 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* Hide horizontal scroll bar */
+}
+
+/* Top Navbar */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: relative; /* Make the navbar relative */
+}
+
+.top-navbar .logo img {
+    width: 100px;
+}
+
+.top-nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative; /* To allow for relative positioning */
+    top: 10px;  /* Adjust the top margin to move the links down */
+}
+
+.top-nav-links li {
+    margin-left: 20px;
+}
+
+.top-nav-links li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Vertical Navbar */
+.vertical-navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.vertical-navbar .logo img {
+    width: 100px;
+}
+
+.vertical-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.vertical-navbar ul li {
+    margin: 20px 0;
+}
+
+.vertical-navbar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.vertical-navbar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+/* Products Carousel */
+#products-carousel {
+    margin-top: 50px;
+}
+
+/* Grid Layout for Charts */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.graph-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+canvas {
+    max-width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-media a {
+    margin: 0 15px;
+}
+
+.social-media img {
+    width: 30px;
+}
+
+
+.survey-section {
+    background-color: #f4f4f4;
+    padding: 30px;
+    text-align: center;
+}
+.survey-form {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.survey-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+.survey-form input,
+.survey-form select,
+.survey-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.survey-form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.survey-form button:hover {
+    background-color: #555;
+}
+
+/* Ensure the video is only shown in the home section */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen */
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place behind the content */
+}
+
+
+/* Hide the video after Home Section */
+#about {
+    position: relative;
+    background: #f4f4f4; /* Ensure the background is solid */
+    padding: 50px 20px;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    /* Show the hamburger menu */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Adjust the navbar to be vertical */
+    .top-nav-links {
+        display: none;
+    }
+
+    /* Show the vertical navbar when clicked */
+    .vertical-navbar {
+        display: flex;
+    }
+
+    /* Close the navbar */
+    .vertical-navbar.show {
+        display: flex;
+    }
+
+    .vertical-navbar.hide {
+        display: none;
+    }
+
+    /* Change layout of grid for charts */
+    .grid-container {
+        grid-template-columns: 1fr; /* Stacks charts vertically */
+    }
+    .logo img {
+        width: auto;
+        height: 80px; /* Adjust height if necessary */
+        display: block; /* Ensure the image is displayed */
+    }
+}
+@media only screen and (max-width: 1024px) {
+    #home {
+        height: 80vh; /* Reduce height for tablets */
+    }
+
+    #background-video {
+        height: 80vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #home {
+        height: 60vh; /* Reduce height for smaller tablets */
+    }
+
+    #background-video {
+        height: 60vh;
+    }
+    
+    .content h1 {
+        font-size: 24px; /* Adjust text size */
+    }
+    
+    .content p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #home {
+        height: 50vh; /* Reduce height for mobile */
+    }
+
+    #background-video {
+        height: 50vh;
+    }
+    
+    .content h1 {
+        font-size: 20px; /* Smaller text for mobile */
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+}
+
+/* About Section Cards */
+.about-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Make Product Images Responsive */
+.product-img {
+    max-height: 400px;  /* Adjust height for uniform display */
+    object-fit: cover;  /* Ensures image fits without distortion */
+}
+
+/* Center Align Carousel */
+#products-carousel {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 80%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-img {
+        max-height: 250px; /* Smaller height for mobile screens */
+    }
+}
+
+.about-carousel {
+    display: none; /* Hidden by default for large screens */
+}
+
+@media (max-width: 767px) {
+    .about-cards {
+        display: none; /* Hide grid layout on small screens */
+    }
+    .about-carousel {
+        display: block; /* Show carousel on small screens */
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination {
+    margin-top: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #000; /* Change arrow color */
+}
+
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.about-cards .card {
+    width: 250px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-carousel {
+    display: none; /* Hide carousel by default */
+}
+
+/* Show carousel only on small screens */
+@media (max-width: 767px) {
+    .about-cards {
+        display: none; /* Hide grid layout */
+    }
+    .about-carousel {
+        display: block; /* Show carousel */
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination {
+    margin-top: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #000; /* Change arrow color */
+}
+
+.about-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.about-cards {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.card {
+    flex: 0 0 100%;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .about-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+        flex: none;
+    }
+}
+
+/* Hide Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    display: none !important;
+}
+
+/* Ensure smooth auto-scrolling */
+.swiper {
+    overflow: hidden;
+    width: 100%;
+}
+/* Hide navigation buttons for screens smaller than 768px */
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+/* Hide the grid layout on small screens (about-cards) */
+.about-cards {
+    display: block; /* Default display for larger screens */
+}
+
+/* Hide the carousel for larger screens */
+.about-carousel {
+    display: none; /* Hidden by default */
+}
+
+/* Show the carousel and hide the grid layout on small screens */
+@media (max-width: 768px) {
+    .about-cards {
+        display: none; /* Hide grid layout on small screens */
+    }
+
+    .about-carousel {
+        display: block; /* Show the carousel on small screens */
+    }
+}
+
+/* Optional: Adjust product image size */
+.product-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Optional: Style the carousel captions */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Add responsive margin for mobile devices */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 0.9rem;
+    }
+}
+
+/* Default: Show the grid layout */
+.about-cards {
+    display: flex;
+}
+
+/* Hide the carousel by default */
+.about-carousel {
+    display: none;
+}
+
+/* On small screens, hide grid and show carousel */
+@media (max-width: 768px) {
+    .about-cards {
+        display: none; /* Hide the grid layout */
+    }
+
+    .about-carousel {
+        display: block; /* Show the carousel */
+    }
+}
+
+
